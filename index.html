@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Resources</title>
+  
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --accent: #3b82f6;
+      --accent-2: #22c55e;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --border: #1f2937;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 800px at 80% -10%, #1e293b 0%, var(--bg) 45%) fixed;
+      color: var(--text);
+    }
+    header {
+      padding: 48px 24px 16px;
+      text-align: center;
+    }
+    .logo {
+      width: 72px; height: 72px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      display: inline-flex; align-items: center; justify-content: center;
+      box-shadow: 0 10px 30px rgba(59,130,246,.25);
+    }
+    .logo svg { width: 40px; height: 40px; color: white; }
+    h1 { margin: 20px 0 8px; font-size: 32px; font-weight: 700; letter-spacing: .2px; }
+    p.subtitle { margin: 0; color: var(--muted); font-size: 15px; }
+
+    .container {
+      max-width: 960px;
+      margin: 24px auto 64px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 800px) {
+      .container { grid-template-columns: 2fr 1fr; }
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .resource {
+      display: flex; align-items: center; gap: 16px;
+      padding: 14px 16px; margin: 10px 0;
+      border: 1px solid var(--border);
+      border-radius: 14px; transition: all .2s ease;
+      background: rgba(255,255,255,.02);
+    }
+    .resource:hover { border-color: #374151; transform: translateY(-1px); background: rgba(255,255,255,.04); }
+    .resource .icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      display: grid; place-items: center; color: white;
+    }
+    .resource .content { flex: 1; }
+    .resource .title { font-weight: 600; margin: 0 0 4px; }
+    .resource .desc { margin: 0; color: var(--muted); font-size: 14px; }
+    .resource .action a {
+      display: inline-block; padding: 10px 14px; border-radius: 10px;
+      background: var(--accent); color: white; text-decoration: none; font-weight: 600; font-size: 14px;
+      box-shadow: 0 6px 16px rgba(59,130,246,.25);
+    }
+    .resource .action a:hover { filter: brightness(1.05); }
+    .resource .action a.secondary { background: var(--accent-2); box-shadow: 0 6px 16px rgba(34,197,94,.25); }
+
+    .qr-card .url {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      background: #0b1220; border: 1px dashed #223049; color: #bac8e4;
+      padding: 10px 12px; border-radius: 10px; overflow-wrap: anywhere; font-size: 13px;
+    }
+    footer {
+      text-align: center; color: var(--muted); font-size: 13px; padding: 24px;
+    }
+    .badge {
+      display:inline-block; padding: 6px 10px; border-radius: 999px;
+      border: 1px solid var(--border); color: var(--muted); font-size: 12px;
+      background: rgba(255,255,255,.03);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" aria-label="Logo">
+      <!-- Spark icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M12 2l2.39 4.84L20 7.27l-4 3.9.94 5.48L12 14.77 7.06 16.65 8 11.17l-4-3.9 5.61-1.43L12 2z"/>
+      </svg>
+    </div>
+    <h1>My Resources</h1>
+    <p class="subtitle">Quick access to the presentation deck and photo</p>
+    <span class="badge">Scan the QR to open this page</span>
+  </header>
+
+  <main class="container">
+    <!-- Left column: resources -->
+    <section class="card">
+      <h2 style="margin-top:0">Resources</h2>
+
+      <!-- PPT resource -->
+      <div class="resource">
+        <div class="icon" style="background: linear-gradient(135deg, #f97316, #fb7185)">
+          <!-- Slide icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="14" rx="2"></rect>
+            <path d="M7 8h10M7 12h6"></path>
+          </svg>
+        </div>
+        <div class="content">
+          <p class="title">Presentation (PPT)</p>
+          <p class="desc">Open the latest presentation deck</p>
+        </div>
+        <div class="action">
+          <a href="https://wescodist-my.sharepoint.com/:p:/p/anovah_sherinh/EeSu6o2hTblBnE-3OLnmwVEBb_ElSijLtZYU4qRFs5ZwNg?e=Gflz1v">Download PPT</a>
+        </div>
+      </div>
+
+      <!-- Photo resource -->
+      <div class="resource">
+        <div class="icon" style="background: linear-gradient(135deg, #22c55e, #06b6d4)">
+          <!-- Photo icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="14" rx="2"></rect>
+            <circle cx="8" cy="10" r="2"></circle>
+            <path d="M21 15l-3.5-3.5L14 15l-3.5-3.5L7 15"></path>
+          </svg>
+        </div>
+        <div class="content">
+          <p class="title">Photo</p>
+          <p class="desc">View or download the image</p>
+        </div>
+        <div class="action">
+          YOUR_PHOTO_LINKView Photo</a>
+        </div>
+      </div>
+    </section>
+
+</body>
+</html>
